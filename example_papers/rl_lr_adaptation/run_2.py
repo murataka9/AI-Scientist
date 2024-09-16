@@ -353,7 +353,7 @@ def train(dataset="shakespeare_char", out_dir="run_0", seed_offset=0):
     backend = "nccl"  # 'nccl', 'gloo', etc.
     # system
     device = "cuda"  # Always use CUDA
-    dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16' # 'float32', 'bfloat16', or 'float16', the latter will auto implement a GradScaler
+    dtype = 'float16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float16' # 'float32', 'bfloat16', or 'float16', the latter will auto implement a GradScaler
     compile = True  # do not torch compile the model on macbooks
 
 
